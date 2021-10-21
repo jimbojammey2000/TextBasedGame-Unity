@@ -12,12 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d9019206cf559204fbb8a803eaf27e16, type: 3}
   m_Name: StartingRoom
   m_EditorClassIdentifier: 
-  description: 'The Starting Room is cold and old and so so silly
+  description: 'You find yourself in a cold dark room
+
 
 
 '
-  roomName: Hehea
+  roomName: North
   exits:
-  - keyString: North
+  - keyString: north
     exitDescription: A door is to the north
     valueRoom: {fileID: 11400000, guid: a539b32f985be38469516055b17d6e4d, type: 2}
+  - keyString: east
+    exitDescription: a door to the room to the east
+    valueRoom: {fileID: 11400000, guid: dd6c9d9b4f4066f47acfd5235eff43e3, type: 2}
