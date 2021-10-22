@@ -10,4 +10,7 @@ public class Room : ScriptableObject
     public string description;
     public string roomName;
     public Exit[] exits;
+
+    public InteractableObject[] interactableObjectsInRoom;
+
 }

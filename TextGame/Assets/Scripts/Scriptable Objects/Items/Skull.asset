@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0dbaee6e19ba7af4795d49a24db1a541, type: 3}
+  m_Name: Skull
+  m_EditorClassIdentifier: 
+  noun: skull
+  descriptiion: A broken human skull lies in the corner
+  interactions:
+  - inputAction: {fileID: 11400000, guid: ed4cf92702b677c4b85c7914cc4d4908, type: 2}
+    textResponse: The Skull is kinda cute...
+    actionResponse: {fileID: 0}
+  - inputAction: {fileID: 11400000, guid: 1336149a1de80d14781d3cd7bcf3c98e, type: 2}
+    textResponse: You take the cute looking skull and stuff it in your pocket for
+      later
+    actionResponse: {fileID: 0}
+  - inputAction: {fileID: 11400000, guid: 904140e043292b24e90d326999cecb61, type: 2}
+    textResponse: You slump down into the corner of the room rambling to the skull
+      about how cute they are and wish there was a way you could both see the great
+      outdoors again...
+    actionResponse: {fileID: 11400000, guid: dd2d549f035644342ba2b74c60ee1448, type: 2}

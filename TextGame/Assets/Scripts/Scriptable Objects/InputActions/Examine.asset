@@ -9,9 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d9019206cf559204fbb8a803eaf27e16, type: 3}
-  m_Name: New Room
+  m_Script: {fileID: 11500000, guid: 88861115587efb84a8f5b652cc4d77ed, type: 3}
+  m_Name: Examine
   m_EditorClassIdentifier: 
-  description: thi eastern room
-  roomName: 
-  exits: []
+  keyWord: examine

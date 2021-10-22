@@ -10,11 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d9019206cf559204fbb8a803eaf27e16, type: 3}
-  m_Name: BackRoom
+  m_Name: EastRoom
   m_EditorClassIdentifier: 
-  description: You walk through the doorway and enter a back room.
+  description: You walk into a empty room. Not much to Look at
   roomName: 
   exits:
-  - keyString: south
-    exitDescription: There is the door you came in to the south
+  - keyString: west
+    exitDescription: The door you came through is to the West
     valueRoom: {fileID: 11400000, guid: 6f3e562aefaf9c545a6f5649e2fb7c83, type: 2}
+  interactableObjectsInRoom: []

@@ -181,7 +181,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 0b8370bf59741f74b9d56d29878f165e, type: 3}
     m_FontSize: 26
     m_FontStyle: 2
     m_BestFit: 0
@@ -260,7 +260,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 0b8370bf59741f74b9d56d29878f165e, type: 3}
     m_FontSize: 26
     m_FontStyle: 0
     m_BestFit: 0
@@ -417,7 +417,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.001091, y: 0.0023489}
+  m_AnchoredPosition: {x: -0.0000076328, y: 0.000029564}
   m_SizeDelta: {x: 280.89, y: 237.01}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1104276023
@@ -433,7 +433,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.103773594, g: 0.09065504, b: 0.09065504, a: 1}
+  m_Color: {r: 0.13207549, g: 0.045603424, b: 0.045603424, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -470,6 +470,7 @@ GameObject:
   - component: {fileID: 1158340537}
   - component: {fileID: 1158340536}
   - component: {fileID: 1158340539}
+  - component: {fileID: 1158340540}
   m_Layer: 0
   m_Name: GameController
   m_TagString: Untagged
@@ -505,8 +506,13 @@ MonoBehaviour:
   displayText: {fileID: 1188679979}
   inputActions:
   - {fileID: 11400000, guid: 4cfdcdbba62bc044ca8ddcd8d1a8b40b, type: 2}
+  - {fileID: 11400000, guid: ed4cf92702b677c4b85c7914cc4d4908, type: 2}
+  - {fileID: 11400000, guid: 1336149a1de80d14781d3cd7bcf3c98e, type: 2}
+  - {fileID: 11400000, guid: 1221dbe762495864284f1223c95c142e, type: 2}
+  - {fileID: 11400000, guid: 904140e043292b24e90d326999cecb61, type: 2}
   roomNavigation: {fileID: 0}
   interactionDescriptionsInRoom: []
+  interactableItems: {fileID: 0}
 --- !u!4 &1158340538
 Transform:
   m_ObjectHideFlags: 0
@@ -534,6 +540,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inputField: {fileID: 2076773551}
+--- !u!114 &1158340540
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1158340535}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4768dbee41e7df545a12edb2195b5aa9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  useableItemList:
+  - {fileID: 11400000, guid: 20396d708f1ba054f9cf08ed940bc5ac, type: 2}
+  nounsInRoom: []
 --- !u!1 &1188679977
 GameObject:
   m_ObjectHideFlags: 0
@@ -568,8 +589,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -413.93738, y: 439}
-  m_SizeDelta: {x: 977.8469, y: 145.5808}
+  m_AnchoredPosition: {x: -413.93738, y: 61}
+  m_SizeDelta: {x: 977.8469, y: 822.9214}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1188679979
 MonoBehaviour:
@@ -584,7 +605,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.31626007, g: 0.7075472, b: 0.2910289, a: 1}
+  m_Color: {r: 0.6698113, g: 0.5724991, b: 0.5724991, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -592,16 +613,16 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 0b8370bf59741f74b9d56d29878f165e, type: 3}
     m_FontSize: 26
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 1
     m_MaxSize: 40
-    m_Alignment: 0
+    m_Alignment: 6
     m_AlignByGeometry: 0
     m_RichText: 1
-    m_HorizontalOverflow: 0
+    m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
   m_Text: New Text
@@ -755,7 +776,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2063978568}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 248, y: 107, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []

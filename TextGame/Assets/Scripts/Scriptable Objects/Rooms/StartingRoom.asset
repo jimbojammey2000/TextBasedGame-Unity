@@ -17,7 +17,7 @@ MonoBehaviour:
 
 
 '
-  roomName: North
+  roomName: Starting Room
   exits:
   - keyString: north
     exitDescription: A door is to the north
@@ -25,3 +25,5 @@ MonoBehaviour:
   - keyString: east
     exitDescription: a door to the room to the east
     valueRoom: {fileID: 11400000, guid: dd6c9d9b4f4066f47acfd5235eff43e3, type: 2}
+  interactableObjectsInRoom:
+  - {fileID: 11400000, guid: 20396d708f1ba054f9cf08ed940bc5ac, type: 2}

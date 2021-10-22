@@ -9,13 +9,15 @@ public class gameController : MonoBehaviour
     public InputAction[] inputActions;
 
     [HideInInspector] public RoomNavigation roomNavigation;
-    [HideInInspector]
-    public List<string> interactionDescriptionsInRoom = new List<string>();
+    [HideInInspector] public List<string> interactionDescriptionsInRoom = new List<string>();
+    [HideInInspector] public InteractableItems interactableItems;
     List<string> actionLog = new List<string>();
+
 
     // Start is called before the first frame update
     void Awake()
     {
+        interactableItems = GetComponent<InteractableItems>();
         roomNavigation = GetComponent<RoomNavigation>();
     }
 
@@ -30,6 +32,7 @@ public class gameController : MonoBehaviour
     {
         string logAsText = string.Join("\n", actionLog.ToArray());
         displayText.text = logAsText;
+        
     }
 
     public void DisplayRoomText()
@@ -48,10 +51,50 @@ public class gameController : MonoBehaviour
     void UnpackRoom()
     {
         roomNavigation.UnpackExitsInRoom();
+        PrepareObjectsToTakeOrExamine(roomNavigation.currentRoom);
     }
+
+    void PrepareObjectsToTakeOrExamine(Room currentRoom)
+    {
+        for (int i = 0; i < currentRoom.interactableObjectsInRoom.Length; i++)
+        {
+            string descriptionNotInInventory = interactableItems.GetObjectsNotInInventory(currentRoom, i);
+            if(descriptionNotInInventory != null)
+            {
+                interactionDescriptionsInRoom.Add(descriptionNotInInventory);
+            }
+
+            InteractableObject interactableInRoom = currentRoom.interactableObjectsInRoom[i];
+            for(int j = 0; j < interactableInRoom.interactions.Length; j++)
+            {
+                Interaction interaction = interactableInRoom.interactions[j];
+                if (interaction.inputAction.keyWord == "examine")
+                {
+                    interactableItems.examineDictonary.Add(interactableInRoom.noun, interaction.textResponse);
+                }
+
+                if (interaction.inputAction.keyWord == "take")
+                {
+                    interactableItems.takeDictonary.Add(interactableInRoom.noun, interaction.textResponse);
+                }
+            }
+
+        }
+    }
+
+    public string TestVerbDictionaryWithNoun(Dictionary<string,string> verbDictionary, string verb, string noun)
+    {
+        if(verbDictionary.ContainsKey(noun))
+        {
+            return verbDictionary[noun];
+        }
+        return "you cant't " + verb + " " + noun;
+    }
+
 
     void ClearCollectionsForNewRoom()
     {
+        interactableItems.ClearCollections();
         interactionDescriptionsInRoom.Clear();
         roomNavigation.ClearExits();
     }
@@ -60,5 +103,4 @@ public class gameController : MonoBehaviour
         actionLog.Add(stringToAdd + "\n");
     }
 
-  
 }
